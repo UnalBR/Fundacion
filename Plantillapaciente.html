@@ -1,0 +1,34 @@
+<html>
+    <body>
+    <h2 style="color:darkblue">
+    HISTORIAL DE DOCTOR
+    </h2>
+    {# Esto es un mensaje de animo #}
+    {% if nombre_grupo == "CICLO 3 GRUPO 6" %}
+
+    <p>ESTE ES UN DESARROLLO PARA SOLO LAS BASES DE DATOS CON DJANGO</p>
+
+    {% endif %}
+
+    <p>Grupo es: {{nombre_grupo.upper}} y pretenece a {{Tipo_Grupo}}</p>
+    <p></p>
+    <p>Hoy es: {{tiempo_ya}}</p>
+    <p>Codigo de prueba creado por {{CreadorNom}} {{CreadorApell}}</p>
+    <p></p>
+    <p><strong>Tareas en JIRA para hacer:</strong></p>
+    <p>
+        <ul>
+        {% if Lista_de_asignaciones %}
+            {% for tarea in Lista_de_asignaciones %}
+                <li>{{tarea|upper}}</li> 
+
+            {% endfor %}
+        {% else %}
+            <p>No hay tareas generadas</p>
+        {% endif %}
+        </ul>
+
+    </p>
+ 
+    </body>
+    </html>

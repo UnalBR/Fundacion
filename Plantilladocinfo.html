@@ -1,0 +1,20 @@
+<html>
+    <body>
+    <h1 style="color:darkblue">
+        <strong>
+            Informe Base de Datos {{Base_Datos}}
+        </strong>
+    </h1>
+    {# Esto es un mensaje de animo #}
+    {% if Base_Datos == "Doctores" %}
+
+    <p>Muestra la base de datos de todos los doctores para el mes </p>
+
+    {% endif %}
+
+    <p>Doc: {{Namedoc.upper}} y cedula de ciudadania: {{Cedula}}</p>
+    <p></p>
+ 
+ 
+    </body>
+    </html>
