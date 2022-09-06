@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS agendamiento;
+DROP TABLE IF EXISTS condicion;
+DROP TABLE IF EXISTS condicion;
+DROP TABLE IF EXISTS empleados;
+DROP TABLE IF EXISTS entidad_salud;
+DROP TABLE IF EXISTS oficio;
+DROP TABLE IF EXISTS transaccion;
+DROP TABLE IF EXISTS usuarios;

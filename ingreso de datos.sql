@@ -1,0 +1,1 @@
+INSERT INTO empleados ( idEmpleados, nombres_e, apellidos_e, documento_e, email_e, telefono_e, direccion_e, fecha_creacion) VALUES ( null ,‘jaime’,‘garzon’, 100 , ’jaimegarzon346@sherman.com’,  15,‘asd‘, null);
