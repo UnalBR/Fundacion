@@ -6,6 +6,15 @@ import datetime
 from django.template import Template, Context # ,loader
 from django.template.loader import get_template
 from django.shortcuts import render
+from django.views import View
+from django.http import JsonResponse
+from GestionIPS.models import Entidad_salud
+from GestionIPS.models import Empleados
+from GestionIPS.models import Usuarios
+from GestionIPS.models import Transaccion
+from GestionIPS.models import Agendamiento
+from GestionIPS.models import Oficio
+from GestionIPS.models import Condicion
 
 class Persona(object):
     def __init__(self, nombre, apellido):
@@ -73,3 +82,13 @@ def calculaedad(request, edad, agno):
     </body>
     </html>""" %(edadfutura, agno)
     return HttpResponse(documento)
+
+class Entidad_saludview(View):
+    
+    def get(self,request):
+        Entidades=list(Entidad_salud.objects.values())
+        if len(Entidades)>0:
+            info={"mensaje":Entidades}
+        else:
+            info={"mensaje":"No se encontro entidades cargadas."}
+        return JsonResponse(info)
