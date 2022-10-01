@@ -1,0 +1,66 @@
+body{
+    background-image: url("https://img.freepik.com/fotos-premium/largo-pasillo-hospital-asientos-vacios_117023-1679.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+
+.contheader{
+    background-color: rgba(0, 162, 255, 0.76);
+    height: 150px;
+    display: flex;
+    align-items: center;
+  
+}
+
+.titulogo{
+    background-color: 0;
+    color:azure;
+    width: 40%;
+    height: 100px;
+    margin-right: 60px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 
+}
+
+.logo{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPntDK7J7bfgnxmc4xOmDEsBkB2V8NlYWMng&usqp=CAU");
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+
+}
+
+.menu{
+    background-color: 0;
+    width: 40%;
+    height: 70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista{
+    display:inline;
+    background-color: aquamarine;
+    width: 200px;
+    border-radius: 40px 10px;
+    padding: 20px 10px;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(12, 12, 122);
+}
+
+.titulop{
+    font-size: 20px;
+    font-weight: bold;
+    display:flex;
+}
