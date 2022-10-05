@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Registro Transacciones</title>
+</head>
+<body>
+
+  <div class="container mt-5 col-7 aling-center">
+    <div class="container text-center">
+        <h2 class="text-succees">Registrar Transacciones</h2>
+    </div>
+<form action="../guardarTransaccion/" method="post">
+  {% csrf_token %}
+        <div class="mb-3">
+            <label for="idTransaccion" class="form-label">idTransaccion</label>
+            <input type="text" class="form-control" id="idTransaccion" name="idTransaccion" >
+          </div>
+          <div class="mb-3">
+            <label for="costo_t" class="form-label">costo_t</label>
+            <input type="text" class="form-control" id="costo_t" name="costo_t" required>
+          </div>
+          <div class="mb-3">
+            <label for="idEntidad_salud" class="form-label">idEntidad_salud</label>
+            <input type="text" class="form-control" id="idEntidad_salud" name="idEntidad_salud" required>
+          </div>
+          <div class="mb-3">
+            <label for="idOficio" class="form-label">idOficio</label>
+            <input type="text" class="form-control" id="idOficio" name="idOficio" required>
+          </div>
+          <div class="mb-3">
+            <label for="descripcion_t" class="form-label">descripcion_t</label>
+            <input type="text" class="form-control" id="descripcion_t" name="descripcion_t" required>
+          </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label">fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" >
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    
+</body>
+</html>

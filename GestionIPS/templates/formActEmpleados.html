@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Registro Empleados</title>
+</head>
+<body>
+
+  <div class="container mt-5 col-7 aling-center">
+    <div class="container text-center">
+        <h2 class="text-succees">Actualizar Oficios</h2>
+    </div>
+<form action="{% url 'actualizarEmpleado' %}" method="post">
+  {% csrf_token %}
+  {%for lib in Empleados%}
+        <div class="mb-3">
+            <label for="idEmpleados" class="form-label">idEmpleados</label>
+            <input type="text" class="form-control" id="idEmpleados"  value="{{idEmpleados}}" disabled>
+          <input type="hidden" class="form-control" id="idEmpleados"  name="idEmpleados" value="{{idEmpleados}}" >
+          </div>
+          <div class="mb-3">
+            <label for="nombres_e" class="form-label">nombres_e</label>
+            <input type="text" class="form-control" id="nombres_e" name="nombres_e" value="{{nombres_e}}">
+          </div>
+          <div class="mb-3">
+            <label for="apellidos_e" class="form-label">apellidos_e</label>
+            <input type="text" class="form-control" id="apellidos_e" name="apellidos_e" value="{{apellidos_e}}">
+          </div>
+          <div class="mb-3">
+            <label for="documento_e" class="form-label">documento_e</label>
+            <input type="text" class="form-control" id="documento_e"  name="documento_e" value="{{documento_e}}">
+          </div>
+          <div class="mb-3">
+            <label for="email_e" class="form-label">email_e</label>
+            <input type="text" class="form-control" id="email_e" name="email_e" value="{{email_e}}">
+          </div>
+          <div class="mb-3">
+            <label for="telefono_e" class="form-label">telefono_e</label>
+            <input type="text" class="form-control" id="telefono_e" name="telefono_e" value="{{telefono_e}}" >
+          </div>
+          <div class="mb-3">
+            <label for="direccion_e" class="form-label">direccion_e</label>
+            <input type="text" class="form-control" id="direccion_e" name="direccion_e" value="{{direccion_e}}">
+          </div>
+          <div class="mb-3">
+            <label for="idAgendamiento" class="form-label">idAgendamiento_id</label>
+            <input type="text" class="form-control" id="idAgendamiento_id" name="idAgendamiento_id" value="{{idAgendamiento_id}}">
+          </div>
+          <div class="mb-3">
+            <label for="idCondicion" class="form-label">idCondicion_id</label>
+            <input type="text" class="form-control" id="idCondicion_id" name="idCondicion_id" value="{{idCondicion_id}}">
+          </div>
+          <div class="mb-3">
+            <label for="idOficio" class="form-label">idOficio_id</label>
+            <input type="text" class="form-control" id="idOficio_id" name="idOficio_id" value="{{idOficio_id}}">
+          </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label">fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" value="{{fecha}}">
+          </div>
+
+       
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        {%endfor%}
+      </form>
+    </div>
+    
+</body>
+</html>

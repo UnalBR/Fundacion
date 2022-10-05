@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Registrar Oficios</title>
+</head>
+<body>
+
+    <div class="container mt-5 col-7 aling-center">
+        <div class="container text-center">
+            <h2 class="text-succees">Registrar Oficios</h2>
+        </div>
+    <form action="../guardarOficio/" method="post">
+      {% csrf_token %}
+        <div class="mb-3">
+          <label for="idOficio" class="form-label">idOficio</label>
+          <input type="text" class="form-control" id="idOficio"  name="idOficio" placeholder="12" maxlength="7" minlength="1">
+        </div>
+        <div class="mb-3">
+            <label for="oficio_o" class="form-label">oficio_o</label>
+            <input type="text" class="form-control" id="oficio_o" name="oficio_o" required pattern="[a-zA-Z ]+" title="Ingrese solo letras">
+          </div>
+          <div class="mb-3">
+            <label for="indicativo_o" class="form-label">indicativo_o</label>
+            <input type="text" class="form-control" id="indicativo_o" name="indicativo_o" required>
+          </div>
+          <div class="mb-3">
+            <label for="indicativo_o" class="form-label">fecha</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" min="2022-9-10" max="2022-10-15">
+          </div>
+          <select class="form-select" aria-label="Default select example">
+            <option  value="0" selected>Selecciona</option>
+            <option value="1">Uno</option>
+            <option value="2">Dos</option>
+            <option value="3">Tres</option>
+          </select>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+</body>
+</html>

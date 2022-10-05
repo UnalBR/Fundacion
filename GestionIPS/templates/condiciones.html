@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Condiciones</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="display-1 bg-primary">Gestion Condiciones</h1>
+    </div>
+
+<!---    <div class="container"></div>
+        <div class="row">
+            <div class="card col" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Título del Oficio</h5>
+                    <p class="card-text">Autor y editorial</p>
+                    <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+                </div>
+            </div>
+        </div>--->
+
+<div class="container mt-5">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <form action="../consultaCondicion/" method="post">
+            {% csrf_token %}
+            <div class=" mb-2 ml-0">
+                <input type="text" name="idCondicion" required>
+            </div>
+            <button type="sumbit" class="btn btn-primary">Consultar</button>
+        </form>
+        <a href="../listaCondiciones/">
+            <button class="btn btn-primary me-md-2" type="button">Todos</button>
+        </a>
+    
+            <a href="../formCondiciones/">
+                <button class="btn btn-primary me-md-2" type="button">Agregar Condicion</button>
+            </a>
+        </div>
+        {% if Mensaje%}
+        <div class="container mt-2 aling-center alert alert-success" role="alert">
+        {{Mensaje}}
+        </div>
+        {% endif%}
+    
+        {% if Error%}
+        <div class="container mt-2 aling-center alert alert-danger" role="alert">
+        {{Error}}
+        </div>
+        {% endif%}
+    <table class="table table-hover mt-2">
+        <thead>
+            <th>idCondicion</th>
+            <th>indicativo_c</th>
+            <th>condicion_c</th>
+            <th>fecha</th>
+            <th>Editar</th>
+            <th>Elininar</th>
+        
+        </thead>
+        <tbody>
+            {% for lib in Condiciones%}
+            <tr>
+                <td>{{lib.idCondicion}}</td>
+                <td>{{lib.indicativo_c}}</td>
+                <td>{{lib.condicion_c}}</td>
+                <td>{{lib.fecha}}</td>
+                <td><a href="{% url 'formularioCondicion' lib.idCondicion %}">
+                    <button type="button" class="btn btn-warning">Editar</button></a></td>
+                <td><a href="{% url 'eliminarCondicion' lib.idCondicion %}">
+                    <button type="button" class="btn btn-danger">Eliminar</button></td>
+            </tr>
+            {% endfor%}
+
+        </tbody>
+    </table>
+</div>
+    
+</body>
+</html>
