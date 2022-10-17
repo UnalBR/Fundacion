@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Registro Condiciones</title>
+</head>
+<body>
+    
+  <div class="container mt-5 col-7 aling-center">
+    <div class="container text-center">
+        <h2 class="text-succees">Actualizar Oficios</h2>
+    </div>
+<form action="{% url 'actualizarCondicion' %}" method="post">
+  {% csrf_token %}
+  {%for lib in Condiciones%}
+        <div class="mb-3">
+            <label for="idCondicion" class="form-label">idCondicion</label>
+            <input type="text" class="form-control" id="idCondicion"  value="{{idCondicion}}" disabled>
+          <input type="hidden" class="form-control" id="idCondicion"  name="idCondicion" value="{{idCondicion}}" >
+          </div>
+          <div class="mb-3">
+            <label for="indicativo_c" class="form-label">indicativo_c</label>
+            <input type="text" class="form-control" id="indicativo_c" name="indicativo_c" value="{{indicativo_c}}">
+          </div>
+          <div class="mb-3">
+            <label for="condicion_c" class="form-label">condicion_c</label>
+            <input type="text" class="form-control" id="condicion_c" name="condicion_c" value="{{condicion_c}}">
+          </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label">fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" value="{{fecha}}" >
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        {%endfor%}
+      </form>
+    </div>
+
+</body>
+</html>

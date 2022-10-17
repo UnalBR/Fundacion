@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Registro Usuarios</title>
+</head>
+<body>
+
+  <div class="container mt-5 col-7 aling-center">
+    <div class="container text-center">
+        <h2 class="text-succees">Registrar Usuarios</h2>
+    </div>
+<form action="../guardarUsuario/" method="post">
+  {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_Usuario" class="form-label">id_Usuario</label>
+            <input type="text" class="form-control" id="id_Usuario" name="id_Usuario" >
+          </div>
+          <div class="mb-3">
+            <label for="nombres_u" class="form-label">nombres_u</label>
+            <input type="text" class="form-control" id="nombres_u" name="nombres_u" required >
+          </div>
+          <div class="mb-3">
+            <label for="apellidos_u" class="form-label">apellidos_u</label>
+            <input type="text" class="form-control" id="apellidos_u" name="apellidos_u"  required>
+          </div>
+          <div class="mb-3">
+            <label for="documento_u" class="form-label">documento_u</label>
+            <input type="text" class="form-control" id="documento_u" name="documento_u" required>
+          </div>
+          <div class="mb-3">
+            <label for="email_u" class="form-label">email_u</label>
+            <input type="text" class="form-control" id="email_u" name="email_u" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono_u" class="form-label">telefono_u</label>
+            <input type="text" class="form-control" id="telefono_u" name="telefono_u"  required>
+          </div>
+          <div class="mb-3">
+            <label for="direccion_u" class="form-label">direccion_u</label>
+            <input type="text" class="form-control" id="direccion_u" name="direccion_u" required>
+          </div>
+          <div class="mb-3">
+            <label for="nombre_r" class="form-label">nombre_r</label>
+            <input type="text" class="form-control" id="nombre_r" name="nombre_r" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono_r" class="form-label">telefono_r</label>
+            <input type="text" class="form-control" id="telefono_r" name="telefono_r" required >
+          </div>
+          <div class="mb-3">
+            <label for="parentesco_r" class="form-label">parentesco_r</label>
+            <input type="text" class="form-control" id="parentesco_r" name="parentesco_r" required >
+          </div>
+          <div class="mb-3">
+            <label for="documento_r" class="form-label">documento_r</label>
+            <input type="text" class="form-control" id="documento_r" name="documento_r" required>
+          </div>
+          <div class="mb-3">
+            <label for="usuario_u" class="form-label">usuario_u</label>
+            <input type="text" class="form-control" id="usuario_u" name="usuario_u"  required>
+          </div>
+          <div class="mb-3">
+            <label for="password_u" class="form-label">password_u</label>
+            <input type="text" class="form-control" id="password_u" name="password_u" required>
+          </div>
+          <div class="mb-3">
+            <label for="idEntidad_salud" class="form-label">idEntidad_salud</label>
+            <input type="text" class="form-control" id="idEntidad_salud" name="idEntidad_salud" required>
+          </div>
+          <div class="mb-3">
+            <label for="idCondicion" class="form-label">idCondicion</label>
+            <input type="text" class="form-control" id="idCondicion"  name="idCondicion" required>
+          </div>
+          <div class="mb-3">
+            <label for="idTransaccion" class="form-label">idTransaccion</label>
+            <input type="text" class="form-control" id="idTransaccion" name="idTransaccion"  required>
+          </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label">fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" >
+          </div>
+
+       
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    
+</body>
+</html>
